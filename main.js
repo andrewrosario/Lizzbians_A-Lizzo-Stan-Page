@@ -18,36 +18,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let username; 
 
     function userLogIn() {
-        loginButton.addEventListener('click', (event) => {
-            event.preventDefault()
-            username = usernameField.value 
-            let wrapper = document.getElementById('page-content-wrapper')
-            wrapper.setAttribute('data-username', username)
-            console.log(username)
-            fetch(userLoginURL, {
-                method: 'POST',
-                body: JSON.stringify ({
-                    username: username
-                }),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(handleErrors)
+        // loginButton.addEventListener('click', (event) => {
+        //     event.preventDefault()
+        //     username = usernameField.value 
+        //     let wrapper = document.getElementById('page-content-wrapper')
+        //     wrapper.setAttribute('data-username', username)
+        //     console.log(username)
+        //     fetch(userLoginURL, {
+        //         method: 'POST',
+        //         body: JSON.stringify ({
+        //             username: username
+        //         }),
+        //         headers: {
+        //             'Accept': 'application/json',
+        //             'Content-Type': 'application/json'
+        //         }
+        //     })
+        //     .then(handleErrors)
 
-            .then (response => {
-                clearInnerContent(innerContentWrapper);
-                loginDiv.classList.add('hide')
-                gameChoice.classList.toggle('hidden')
-                trillButton.classList.toggle('hidden')
-                menuToggle.classList.toggle('hidden')
-            })
-            .catch(function (error){
-                alert ("Login was unsuccsessful. Please try again!");
-                console.log(`this doesn't work`, error);
-            })
-        })
+        //     .then (response => {
+        //         clearInnerContent(innerContentWrapper);
+        //         loginDiv.classList.add('hide')
+        //         gameChoice.classList.toggle('hidden')
+        //         trillButton.classList.toggle('hidden')
+        //         menuToggle.classList.toggle('hidden')
+        //     })
+        //     .catch(function (error){
+        //         alert ("Login was unsuccsessful. Please try again!");
+        //         console.log(`this doesn't work`, error);
+        //     })
+        // })
+        username = usernameField.value 
+        clearInnerContent(innerContentWrapper);
+        loginDiv.classList.add('hide')
+        gameChoice.classList.toggle('hidden')
+        trillButton.classList.toggle('hidden')
+        menuToggle.classList.toggle('hidden')
     };
 
     function userSignUp() {
