@@ -51,33 +51,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
 
     function userSignUp() {
-        signupButton.addEventListener('click', (event) => {
-            username = usernameField.value 
-            const wrapper = document.getElementById('page-content-wrapper')
-            wrapper.setAttribute('data-username', username)
-            fetch(userCreate, {
-                method: 'POST',
-                body: JSON.stringify ({
-                    username: username
-                }),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(handleErrors)
+        // signupButton.addEventListener('click', (event) => {
+        //     username = usernameField.value 
+        //     const wrapper = document.getElementById('page-content-wrapper')
+        //     wrapper.setAttribute('data-username', username)
+        //     fetch(userCreate, {
+        //         method: 'POST',
+        //         body: JSON.stringify ({
+        //             username: username
+        //         }),
+        //         headers: {
+        //             'Accept': 'application/json',
+        //             'Content-Type': 'application/json'
+        //         }
+        //     })
+        //     .then(handleErrors)
 
-            .then (response => {
-                clearInnerContent(innerContentWrapper);
-                loginDiv.classList.add('hide')
-                gameChoice.classList.toggle('hidden')
-                trillButton.classList.toggle('hidden')
-                menuToggle.classList.toggle('hidden')
-            })
-            .catch(function (error){
-                console.log(`this doesn't work`, error);
-            })
-        })
+        //     .then (response => {
+        //         clearInnerContent(innerContentWrapper);
+        //         loginDiv.classList.add('hide')
+        //         gameChoice.classList.toggle('hidden')
+        //         trillButton.classList.toggle('hidden')
+        //         menuToggle.classList.toggle('hidden')
+        //     })
+        //     .catch(function (error){
+        //         console.log(`this doesn't work`, error);
+        //     })
+        // })
+        clearInnerContent(innerContentWrapper);
     }
 
     function userSignOut() {
