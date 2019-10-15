@@ -3,7 +3,7 @@ let ticker;
 let score;
 let userScore;
 let questions;
-const questionsURL = 'http://localhost:3000/questions'
+const questionsURL = 'https://morning-beach-63879.herokuapp.com/questions'
 
 let newScore;
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         clearInnerContent(innerContentWrapper);
         hideStaticElements();
 
-        fetch(`http://localhost:3000/games/${type}`)
+        fetch(`https://morning-beach-63879.herokuapp.com/games/${type}`)
         .then(resp => resp.json())
         .then(resp => {
             const scoresDiv = document.createElement('div');
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Fetches Correct and Incorrect andswers and Calculates Score
     function fetchCorrectAnswers(thisQuestion, thisAnswerId, pointsMultiplier, gameType, allowedWrongAnswers) {
-        fetch(`http://localhost:3000/answers/${thisQuestion.id}`)
+        fetch(`https://morning-beach-63879.herokuapp.com/answers/${thisQuestion.id}`)
         .then(resp => resp.json())
         .then(resp => {
             for(let i = 0; i < resp.length; i++) {
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // end of game logic
     function recordHighScore(gameType) {
-        const createGameURL = `http://localhost:3000/games`;
+        const createGameURL = `https://morning-beach-63879.herokuapp.com/games`;
         const wrapper = document.getElementById('page-content-wrapper');
         username = wrapper.dataset.username;
         const scoreScreenGrab= document.getElementById('score-goes-here').innerHTML;

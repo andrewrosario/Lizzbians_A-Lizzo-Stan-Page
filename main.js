@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const signupButton = document.getElementById('signup')
     const loginButton = document.getElementById('login')
     const usernameField = document.getElementById('username')
-    const userLoginURL = `http://localhost:3000/sessions/`
-    const userCreate = `http://localhost:3000/users`
+    const userLoginURL = `https://morning-beach-63879.herokuapp.com/sessions/`
+    const userCreate = `https://morning-beach-63879.herokuapp.com/users`
     const themeButton = document.getElementById('theme')
     const leaderboardButton = document.getElementById('leaderboard')
     const innerContentWrapper = document.getElementById('inner-content')
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         hideStaticElements()
 
-        fetch(`http://localhost:3000/games/${type}`)
+        fetch(`https://morning-beach-63879.herokuapp.com/games/${type}`)
         .then(resp => resp.json())
         .then(resp => {
 
